@@ -6,7 +6,12 @@ import { addToCart, removeFromCart } from '../actions';
 const ProductListing = ({ products, addToCart, removeFromCart, cart }) => (
   <div className="product-listing">
     {products.map(product => (
-      <ProductItem key={product.id} product={product} addToCart={addToCart} cart={cart} />
+      <ProductItem
+        key={product.id}
+        product={product}
+        addToCart={addToCart}
+        cartItem={cart.filter(cartItem => cartItem.id === product.id)[0]}
+      />
     ))}
   </div>
 );

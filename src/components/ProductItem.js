@@ -1,9 +1,6 @@
 import React from 'react';
 
-const ProductItem = ({ product, addToCart, cart }) => {
-  const thisItemInCart = cart.filter(item => item.id === product.id);
-  console.log('thisItemInCart: ', thisItemInCart);
-
+const ProductItem = ({ product, addToCart, cartItem }) => {
   return (
     <div className="product-item">
       <h3 className="title">{product.name}</h3>
@@ -12,7 +9,7 @@ const ProductItem = ({ product, addToCart, cart }) => {
       <div className="price">{product.price} €</div>
       <div>
         <button onClick={() => addToCart(product)} className="add-cart">
-          Add to Cart ({(thisItemInCart && thisItemInCart.length) || 0})
+          Add to Cart ({(cartItem && cartItem.quantity) || 0})
         </button>
       </div>
     </div>
