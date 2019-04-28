@@ -11,3 +11,10 @@ export const removeFromCart = product => {
     payload: product,
   };
 };
+
+export const removeAllFromCart = product => {
+  return {
+    type: 'REMOVE_ALL',
+    payload: product,
+  };
+};
