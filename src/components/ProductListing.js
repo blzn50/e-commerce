@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ProductItem from './ProductItem';
-import { addToCart } from '../actions';
+import { addToCart, removeFromCart } from '../actions';
 
-const ProductListing = ({ products }) => (
+const ProductListing = ({ products, addToCart, removeFromCart, cart }) => (
   <div className="product-listing">
     {products.map(product => (
-      <ProductItem key={product.id} product={product} />
+      <ProductItem key={product.id} product={product} addToCart={addToCart} cart={cart} />
     ))}
   </div>
 );
@@ -19,6 +19,7 @@ const mapStateToProps = state => {
 
 const actionCreators = {
   addToCart,
+  removeFromCart,
 };
 
 export default connect(
