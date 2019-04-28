@@ -1,0 +1,18 @@
+.container {
+  margin: 10px auto;
+  padding: 30px;
+  width: 1000px;
+  background-color: white;
+}
+
+.product-listing {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.product-listing .product-item {
+  padding: 10px 30px;
+  width: 300px;
+}
