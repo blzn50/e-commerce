@@ -10,6 +10,7 @@ const ProductListing = ({ products, addToCart, removeFromCart, cart }) => (
         key={product.id}
         product={product}
         addToCart={addToCart}
+        removeFromCart={removeFromCart}
         cartItem={cart.filter(cartItem => cartItem.id === product.id)[0]}
       />
     ))}

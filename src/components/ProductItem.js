@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProductItem = ({ product, addToCart, cartItem }) => {
+const ProductItem = ({ product, addToCart, removeFromCart, cartItem }) => {
   return (
     <div className="product-item">
       <h3 className="title">{product.name}</h3>
@@ -11,6 +11,11 @@ const ProductItem = ({ product, addToCart, cartItem }) => {
         <button onClick={() => addToCart(product)} className="add-cart">
           Add to Cart ({(cartItem && cartItem.quantity) || 0})
         </button>
+        {cartItem ? (
+          <button onClick={() => removeFromCart(cartItem)} className="remove-cart">
+            Remove
+          </button>
+        ) : null}
       </div>
     </div>
   );
