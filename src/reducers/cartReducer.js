@@ -3,7 +3,6 @@ const cartWithItem = (cart, item) => cart.filter(cartItem => cartItem.id === ite
 
 const addToCart = (cart, item) => {
   const cartItem = cartWithItem(cart, item);
-  console.log('cartItem: ', cartItem);
   return cartItem === undefined
     ? [...cartWithoutItem(cart, item), { ...item, quantity: 1 }]
     : [...cartWithoutItem(cart, item), { ...cartItem, quantity: cartItem.quantity + 1 }];
